@@ -1,0 +1,110 @@
+.pagelayout-login .card-title h2 img {
+    max-width: 100%;
+    max-height: 100px;
+}
+
+.pagelayout-login #region-main {
+    border: 0;
+    background-color: inherit;
+}
+
+.login-box {
+
+  margin: 60px auto;
+
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  width: 100%;
+  max-width: 500px;
+
+  @media (max-width: 780px) {
+    max-width: 100%;
+    margin: 60px 20px 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  @include media-breakpoint-only(sm) {
+    padding: 0 1rem 1rem;
+  }
+
+  .login-box-header {
+    padding: 2 * $spacer;
+    margin: 0!important;
+
+    font-size: $font-size-lg!important;
+    font-weight: $font-weight-sm-bold!important;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 300px;
+
+      @include media-breakpoint-down(md) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .login-msg {
+    font-size: $font-size-sm;
+  }
+}
+
+
+  .s-login-box,
+  .sign-up-form
+  {
+
+    .login-left & {
+      justify-content: flex-start;
+    }
+
+    .login-center & {
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .login-right & {
+      justify-content: flex-end;
+    }
+
+  }
+
+
+  .login-left,
+  .login-right {
+    .login-box {
+      margin: 0;
+      min-height: 100vh;
+      max-height: 100%;
+
+      border-radius: 0;
+
+      @media (max-width: 780px) {
+        margin: 60px 0 0;
+      }
+    }
+  }
+
+
+@media (max-width: 780px) {
+  #page-login-signup {
+
+    [data-groupname="buttonar"] {
+      .form-group {
+        display: block;
+        width: 100%;
+        margin: 0.25rem 0;
+      }
+    }
+
+  }
+}

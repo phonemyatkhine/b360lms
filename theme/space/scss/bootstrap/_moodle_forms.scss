@@ -1,0 +1,978 @@
+/**
+ * Moodle forms HTML isn't changeable via renderers (yet?) so this
+ * .less file imports styles from the bootstrap $variables file and
+ * adds them to the existing Moodle form CSS ids and classes.
+ *
+ */
+.jsenabled .mform .containsadvancedelements .advanced {
+    display: none;
+}
+
+.mform .containsadvancedelements .advanced.show {
+    display: flex;
+}
+
+.path-admin-tool-customlang .mform.filterform {
+  width: 100%;
+}
+
+.mform .form-inline {
+    .form-control,
+    .custom-select {
+        max-width: 100%;
+        @include media-breakpoint-between(sm,md) {
+          width: 100%;
+        }
+    }
+
+    .custom-select {
+      @include media-breakpoint-only(sm) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .form-group {
+        margin: 0 0.25rem 0 0;
+    }
+    br + label {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+
+#jump-to-activity.custom-select {
+    width: 100%;
+    margin: 0;
+
+    @include media-breakpoint-only(sm) {
+      margin: 1rem 0;
+    }
+}
+
+.mform fieldset {
+    margin-bottom: 0.25rem;
+}
+
+.editor_atto_content.form-control,
+.editor_atto_content {
+    width: calc(100% - 16px);
+    margin: 8px;
+    padding: 1rem;
+    word-wrap: break-word;
+
+    border: 1px solid $gray-400;
+    border-radius: $border-radius;
+    box-shadow: inset 1px 1px 4px 0 rgba(0,0,0,.13);
+}
+
+.form-control.atto_h5p_url {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.jsenabled .mform .collapsed .fcontainer {
+    display: none;
+}
+
+.mform ul.file-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.mform label .req,
+.mform label .adv {
+    cursor: help;
+}
+/*rtl:ignore*/
+input#id_externalurl {
+    direction: ltr;
+}
+
+#portfolio-add-button {
+    display: inline;
+}
+
+.form-defaultinfo,
+.form-label .form-shortname {
+    @extend .text-muted;
+    font-size: $font-size-xs;
+    padding-left: $spacer;
+
+    @include media-breakpoint-between(sm,md) {
+      padding-left: 0;
+      margin-bottom: 0.5rem;
+    }
+}
+
+.form-label .form-shortname {
+    font-size: $font-size-xs;
+    display: block;
+    word-wrap: break-word;
+}
+
+.form-item .form-inline {
+    display: inline;
+}
+
+.form-inline label:not(.sr-only):not(.accesshide) + select {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+
+    @include media-breakpoint-between(sm,md) {
+      margin: 0;
+      width: 100%;
+    }
+
+    .moodle-dialogue-bd & {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0.5rem;
+    }
+}
+
+.formsettingheading {
+  padding: 2 * $spacer 0;
+
+  .form-horizontal {
+      @extend .text-muted;
+  }
+}
+
+// Moodle doesn't differentiate between what Bootstrap calls
+// .uneditable-inputs and form help text. Styling them both as
+// uneditable looks ugly, styling both as form help is fairly
+// subtle in it's impact. Going for the latter as the best option.
+.no-felement.fstatic {
+    @extend .text-muted;
+    padding-top: 5px;
+}
+
+.no-fitem .fstaticlabel {
+    font-weight: bold;
+}
+
+// Pale grey container for submit buttons.
+.form-buttons,
+.path-admin .buttons,
+#fitem_id_submitbutton,
+.fp-content-center form + div,
+div.backup-section + form,
+#fgroup_id_buttonar {
+    @extend .form-group;
+    padding-left: 0;
+}
+
+.form-item .form-setting .defaultsnext > input {
+    display: inline-block;
+}
+
+.form-item .form-setting .form-checkbox.defaultsnext {
+    // Need to specify .defaultsnext and the .form-checkbox class
+    // is somewhat randomly re-used on various actual checkboxes
+    // throughout the admin forms, instead of on the wrapper div.
+    margin-top: 5px; // Push down checkboxes to align.
+    display: inline-block; // So above style sticks.
+}
+
+#adminsettings {
+
+  fieldset {
+    h3 {
+        padding: 0!important;
+        font-size: $font-size-base * 1.25;
+        font-weight: $font-weight-sm-bold;
+
+        a:not([class='btn-icon']) {
+          position: relative;
+          display: block;
+
+          text-align: left;
+          text-decoration: none;
+
+          &:after {
+            content: '';
+            background-image: url([[pix:theme|fp/alias]]);
+            background-size: 8px;
+            background-repeat: no-repeat;
+
+            width: 16px;
+            height: 16px;
+
+            position: absolute;
+            top: calc(50% - 8px);
+            right: 30px;
+          }
+        }
+    }
+  }
+
+  span.error {
+      display: inline-block;
+      border: 1px solid $state-danger-border;
+      border-radius: 4px;
+      background-color: $state-danger-bg;
+      padding: 4px;
+      margin-bottom: 4px;
+  }
+
+
+  .form-control[size] {
+      width: auto;
+  }
+
+  .error {
+      color: $state-danger-text;
+  }
+
+}
+
+// I think this could be avoided (or at least tidied up) ifr
+// we used HTML5 input types like url, phone, email, number etc.
+/* rtl:ignore */
+.mform .fitem .felement input[name="email"],
+.mform .fitem .felement input[name="email2"],
+.mform .fitem .felement input[name="url"],
+.mform .fitem .felement input[name="idnumber"],
+.mform .fitem .felement input[name="phone1"],
+.mform .fitem .felement input[name="phone2"] {
+    text-align: left;
+    direction: ltr;
+}
+
+/* rtl:ignore */
+#page-admin-grade-edit-scale-edit .error input#id_name {
+    margin-right: 170px;
+}
+
+#page-grade-edit-outcome-course .courseoutcomes {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#page-grade-edit-outcome-course .courseoutcomes td {
+    text-align: center;
+}
+/* Install Process' text fields Forms, should always be justified to the left */
+/* rtl:ignore */
+#installform #id_wwwroot,
+#installform #id_dirroot,
+#installform #id_dataroot,
+#installform #id_dbhost,
+#installform #id_dbname,
+#installform #id_dbuser,
+#installform #id_dbpass,
+#installform #id_prefix {
+    direction: ltr;
+}
+
+.mdl-right > label {
+    // Workaround for repository pop-up because the : are outside the label,
+    // can/should be fixed in filemanager renderers.
+    display: inline-block;
+}
+
+.singleselect {
+    max-width: 100%;
+}
+
+.form-item .form-label label {
+    margin-bottom: 0;
+}
+
+div#dateselector-calendar-panel {
+    z-index: 3100; /* Set higher than the z-index of the filemanager - see MDL-39047. */
+}
+
+fieldset.coursesearchbox {
+  width: 100%;
+  background-color: transparent;
+
+
+  #page-site-index & {
+    text-align: center;
+  }
+
+  label {
+    margin-right: 0.5rem;
+
+    #page-site-index & {
+      width: 100%;
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .card-header {
+    border-top: 1px solid $gray-400;
+    border-bottom: none;
+    padding: 0;
+    background-color: transparent;
+
+    h2 {
+      margin: 2rem 0 1rem!important;
+      font-size: 0.85rem;
+      font-weight: $font-weight-sm-bold!important;
+    }
+  }
+
+  .card-body {
+    padding: 0;
+
+    .input-group {
+      margin: 0!important;
+      padding: 0;
+    }
+  }
+
+  label {
+      display: inline;
+  }
+
+  .input-group-btn {
+    .btn {
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+  }
+}
+
+/**
+ * Show the labels above text editors and file managers except on wide screens.
+ */
+
+
+/* Section and module editing forms contain special JS components for the
+   availability system (if enabled). */
+#id_availabilityconditionsjson[aria-hidden=true],
+.availability-field [aria-hidden=true] {
+    display: none;
+}
+
+.availability-field {
+    label {
+        display: inline-flex;
+    }
+    .availability-group label {
+        vertical-align: top;
+        align-self: center;
+    }
+}
+
+.availability-eye {
+    clear: left;
+    float: left;
+}
+.availability-inner,
+.availability-plugincontrols {
+    float: left;
+    @include border-radius($card-border-radius);
+    border: $card-border-width solid $card-border-color;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+.availability-plugincontrols,
+.availability-childlist .availability-inner {
+    margin-left: .625rem;
+}
+.availability-field .availability-plugincontrols .availability-group select {
+    max-width: 12rem;
+}
+
+/* Custom styles for autocomplete form element */
+/* These styles reserve a standard amount of space in the DOM to avoid flicker when the original select element is replaced */
+[data-fieldtype=autocomplete] select,
+[data-fieldtype=tags] select,
+.form-autocomplete-original-select {
+    visibility: hidden;
+    overflow: hidden;
+    width: 15rem;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-top: $font-size-base * $line-height-base + $input-padding-y-sm;
+    vertical-align: bottom;
+}
+
+.form-autocomplete-multiple [role=listitem] {
+    cursor: pointer;
+    position: relative;
+
+    padding-left: 1rem;
+
+    span {
+      margin-right: 10px;
+    }
+}
+
+table.form-autocomplete-suggestions,
+.form-autocomplete-suggestions {
+    background-color: $gray-900;
+    border-radius: $border-radius;
+
+    color: $gray-100;
+    font-size: $font-size-sm;
+
+    min-width: 206px;
+    max-height: 20em;
+    overflow: auto;
+
+    margin: 0;
+    padding: $spacer;
+
+    position: absolute;
+    z-index: $zindex-fixed!important;
+
+    box-shadow: 0 6px 14px 0 rgba(0,0,0,0.32);
+}
+
+fieldset {
+  .form-autocomplete-suggestions {
+      background-color: $gray-900;
+      border-radius: $border-radius;
+
+      color: $gray-100;
+      font-size: $font-size-sm;
+
+      min-width: 206px;
+      max-height: 20em;
+      overflow: auto;
+
+      margin: 0;
+      padding: $spacer;
+
+      position: absolute;
+      z-index: 1;
+
+      box-shadow: 0 6px 14px 0 rgba(0,0,0,0.32);
+
+      li {
+        img {
+          width: 20px;
+          height: 20px;
+          border-radius: 20px;
+          margin-right: 10px;
+        }
+      }
+  }
+}
+
+
+.form-autocomplete-suggestions li {
+    list-style-type: none;
+    padding: 0.5rem;
+    margin: 0;
+    cursor: pointer;
+    color: $white;
+    border-radius: $border-radius;
+}
+
+.form-autocomplete-suggestions li:hover {
+    background-color: $gray-700;
+    color: $dropdown-link-active-color;
+}
+
+.form-autocomplete-suggestions li[aria-selected=true] {
+    background-color: $black2;
+    color: $white;
+}
+
+.form-autocomplete-selection:focus {
+    outline: none;
+}
+/** Undo some bootstrap things */
+.form-autocomplete-selection + input.form-control {
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form-autocomplete-selection [data-active-selection=true] {
+    padding: 0.5em;
+    font-size: large;
+}
+
+.form-autocomplete-selection {
+  margin-bottom: 5px;
+
+  input[type=text] {
+    margin-bottom: 0;
+  }
+}
+
+/* Non-bootstrap selects with a size show their contents outside of the element.
+ * Remove when we update to stable bootstrap 4. (MDL-56511) */
+select[size],
+select[multiple] {
+    overflow: auto;
+}
+
+select[size="1"] {
+    overflow: visible;
+}
+
+textarea[data-auto-rows] {
+    overflow-x: hidden;
+}
+
+/** Display elements under labels in vertical forms regardless of the screen size. */
+.mform.full-width-labels {
+    .fitem.row {
+        margin-left: 0;
+        margin-right: 0;
+        & > .col-md-3,
+        & > .col-md-9 {
+            float: none;
+            width: inherit;
+            padding-right: 0;
+            padding-left: 0;
+        }
+        &.femptylabel > .col-md-3,
+        &.femptylabel > .col-md-2 {
+            display: none;
+        }
+    }
+}
+
+.femptylabel {
+  .path-enrol & {
+    .col-md-3 {
+      display: none;
+    }
+
+    .col-md-9 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+/** Allow wrapping an mform in a div with the form-inline class to have an inline, responsive form. */
+.form-inline {
+    @include media-breakpoint-up(md) {
+        .col-md-9,
+        .col-md-3 {
+            label {
+                margin-left: 1rem;
+            }
+            margin-bottom: 1rem;
+            width: auto;
+        }
+    }
+}
+
+// We dont' use the mixin because it's expensive.
+[data-fieldtype="modgrade"] {
+    background-color: $card-bg;
+    @include border-radius($card-border-radius);
+    border: $card-border-width solid $card-border-color;
+    padding: $card-spacer-x;
+}
+
+/** Atto fields do not have form-control because that would break the layout of the editor.
+    So they need these extra styles to highlight the editor when there is a validation error. */
+.has-danger .editor_atto_content.form-control,
+.has-danger .editor_atto_content.form-control-danger {
+    @include form-control-validation($brand-danger);
+    background-image: $form-icon-danger;
+    padding-right: ($input-padding-x * 3);
+    background-repeat: no-repeat;
+    background-position: center right 1rem;
+    background-size: 1.5rem;
+}
+
+// Styles for the JS file types browser provided by the "filetypes" element.
+[data-filetypesbrowserbody] {
+    [aria-expanded="false"] > [role="group"],
+    [aria-expanded="false"] [data-filetypesbrowserfeature="hideifcollapsed"],
+    [aria-expanded="true"] [data-filetypesbrowserfeature="hideifexpanded"] {
+        display: none;
+    }
+}
+
+// The autocomplete popup needs a display:block container to correctly position to popup.
+.form-inline[data-fieldtype="autocomplete"],
+.form-inline[data-fieldtype="tags"] {
+    display: block;
+}
+
+// Show editor at 100% width by default.
+[data-fieldtype="editor"] > div {
+    flex-grow: 1;
+}
+
+
+  //toogle bar UI
+  fieldset {
+    .ftoggler {
+
+      a.fheader {
+        display: block;
+        align-self: stretch;
+        color: $gray-800;
+
+        background: #fff;
+        border: 1px solid #e4e8f0;
+        border-radius: $border-radius;
+
+        box-shadow: $box-shadow-sm;
+
+        font-size: $font-size-base;
+        text-decoration: none;
+        cursor: pointer;
+
+        margin: 0;
+        padding: $spacer 2 * $spacer $spacer 3 * $spacer;
+
+        transition: $general-transition;
+
+        &:hover {
+          text-decoration: none;
+          box-shadow: $box-shadow-lg;
+        }
+
+        text-decoration: none;
+        color: inherit;
+      }
+
+    }
+  }
+
+  .fcontainer {
+    margin-top: $spacer;
+
+    #page-login-forgot_password & {
+      margin-top: 0;
+    }
+  }
+
+  .mform fieldset.collapsible legend a.fheader {
+      display: block;
+      padding: 1rem 1.5rem;
+
+      background: url([[pix:t/expanded]]) right 20px center no-repeat;
+      background-size: 12px;
+
+      background-color: $white;
+      box-shadow: $box-shadow-sm;
+
+      border-radius: $border-radius;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-sm-bold;
+      color: $gray-900;
+
+      transition: $general-transition;
+
+      &:hover {
+        text-decoration: none;
+        box-shadow: $box-shadow-lg;
+      }
+  }
+
+  .mform fieldset.collapsed legend a.fheader {
+      /*rtl:raw:
+      background-image: url([[pix:t/collapsed_rtl]]);
+      */
+      /*rtl:remove*/
+      background-image: url([[pix:t/collapsed]]);
+  }
+
+  .mform fieldset.collapsed legend,
+  .ftoggler {
+    position: relative;
+
+    .btn-icon {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 35px;
+
+      line-height: 0;
+    }
+  }
+
+  .editor_atto_content_wrap, .editor_atto + textarea {
+    border: none!important;
+    word-wrap: break-word;
+  }
+
+  .editor_atto_toolbar {
+      background-color: $gray-dark!important;
+      border: none!important;
+      border-radius: $border-radius!important;
+      box-shadow: $box-shadow-lg!important;
+
+      position: relative!important;
+      z-index: 1!important;
+  }
+
+  .editor_atto_content.form-control {
+      margin-top: 10px!important;
+      border-radius: $border-radius!important;
+
+      position: relative!important;
+
+      width: calc(99% - 16px)!important;
+      left: 0.5%!important;
+
+      border: 1px solid $gray-400!important;
+  }
+
+  .editor_atto_notification .atto_info {
+    width: calc(100% - 16px);
+    margin: 8px;
+    padding-right: 15px!important;
+    border-radius: $border-radius!important;
+
+    font-size: 12px!important;
+
+    img {
+      margin: 10px!important;
+      width: 18px;
+      @extend .icon;
+    }
+  }
+
+  div.editor_atto_toolbar button {
+    padding: 6px 6px 9px!important;
+  }
+
+  #id_description_editor {
+    margin-bottom: 2 * $spacer;
+  }
+
+  /*Ggrade Edit Page */
+  #page-admin-grade-edit-letter-index {
+    .fitem:first-child {
+      margin-left: 0;
+    }
+
+    .fitem {
+      margin-left: $spacer;
+      margin-right: $spacer;
+    }
+  }
+
+
+  /* MOD - grade/edit/tree/index.php */
+  #menumoveafter {
+    margin: 0 $spacer;
+  }
+
+  #page-grade-report-history-index {
+    .form-inline .form-check {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  /* Mod - user_competency_in_course.php */
+  #page-admin-tool-lp-user_competency_in_course {
+    [role="main"] {
+      .card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .user-competency-course-navigation {
+    width: 100%;
+
+    .form-autocomplete-selection + input.form-control {
+      width: 100%;
+    }
+  }
+
+
+.editor_atto_content {
+  min-height: 100px!important;
+}
+
+/* mod for popup */
+.path-admin-tool-lp [data-region="competencylinktree"] ul[data-enhance="linktree"] {
+  margin: 1rem 0 0 0!important;
+
+  li {
+    img:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.attachments {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+
+  a {
+    margin-right: 0.5rem!important;
+    color: $gray-800;
+
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $blue-3;
+    }
+  }
+
+}
+
+
+#existingcell,
+#potentialcell {
+  width: 40%;
+}
+
+#buttonscell {
+  width: 20%;
+}
+
+[data-filetypesdescriptions="id_assignsubmission_file_filetypes"] {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0 0;
+}
+
+#id_modstandardgrade [data-fieldtype="modgrade"] {
+  padding: 2 * $spacer;
+
+  .form-group, label {
+    margin-bottom: 1rem;
+  }
+}
+
+#page-mod-feedback-edit {
+  .singleselect {
+      margin: 0.5rem 0;
+      width: 100%;
+  }
+}
+
+
+[data-passwordunmask="wrapper"] {
+  background-color: $gray-100;
+  border-radius: $border-radius;
+
+  padding: 1rem 1.5rem;
+
+  em {
+    font-style: normal;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-sm-bold;
+  }
+
+  a {
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  .icon {
+    color: $blue-3;
+    margin-right: 0.5rem;
+  }
+}
+
+#page-admin-user-user_bulk {
+  [data-groupname="timemodified_sdt"],
+  [data-groupname="timemodified_edt"],
+  [data-groupname="lastaccess_edt"],
+  [data-groupname="lastaccess_sdt"],
+  [data-groupname="firstaccess_sdt"],
+  [data-groupname="firstaccess_edt"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+#page-mod-data-templates {
+  div.editor_atto_toolbar {
+    padding: 0 8px 8px 0;
+  }
+
+  .editor_atto_content_wrap div {
+    border: 1px solid #ececec!important;
+  }
+
+  #tempform {
+    table {
+      width: 100%;
+
+      td {
+        padding: 2rem 0;
+        border-bottom: 1px solid $gray-400;
+      }
+    }
+
+    textarea {
+      width: 100%;
+    }
+  }
+}
+
+
+/* Site administration */
+@include media-breakpoint-between(sm,md) {
+  #page-admin-search {
+    #fgroup_id_group_1 {
+
+      .col-md-3 {
+        display: none;
+      }
+
+      .col-md-9 {
+        flex: 0 0 100%;
+        max-width: 100%;        
+      }
+
+      .form-inline {
+        width: 100%;
+
+        .fitem,
+        [data-fieldtype="text"],
+        [data-fieldtype="text"],
+        [data-fieldtype="submit"],
+        [type="submit"]        
+        {
+          width: 100%;
+        }
+
+        [data-fieldtype="text"] {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+#page-mod-assign-grader {
+  .form-control {
+    margin-bottom: 0;
+  }
+}
+
+// Calendar icon next to input field
+.visibleifjs {
+  .icon {
+    margin: 0 0.5rem;
+  }
+}
+
+/* modal windows */
+.atto_form.atto_media>.tab-content {
+  overflow-x: unset;
+  max-height: inherit;
+}

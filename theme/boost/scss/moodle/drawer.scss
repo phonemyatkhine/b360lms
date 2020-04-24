@@ -2,8 +2,7 @@
 $fixed-header-y: $navbar-height;
 
 $drawer-width: 285px !default;
-$drawer-padding-x: 20px !default;
-$drawer-padding-y: 20px !default;
+
 $drawer-offscreen-gutter: 20px !default;
 
 :target::before {
@@ -33,14 +32,14 @@ $drawer-bg: darken($body-bg, 5%) !default;
 
 [data-region="drawer"] {
     position: fixed;
-    padding: $drawer-padding-x $drawer-padding-y;
+    padding-top:20px;
     width: $drawer-width;
     top: $fixed-header-y;
     height: calc(100% - #{$navbar-height});
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: $zindex-dropdown - 1;
-    background-color: $drawer-bg;
+    background-color: #fff;
     -webkit-transition: right 0.5s ease, left 0.5s ease;
     -moz-transition: right 0.5s ease, left 0.5s ease;
     transition: right 0.5s ease, left 0.5s ease;

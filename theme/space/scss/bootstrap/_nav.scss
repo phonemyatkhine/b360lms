@@ -1,0 +1,201 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem;
+  position: relative;
+
+  color: $gray-900;
+  border-radius: $border-radius;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  transition: all 350ms ease;
+
+  .nav-tabs & {
+    padding: 1rem;
+  }
+
+  .s-top & {
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+
+  &:hover {
+    color: $gray-900;
+  }
+
+  // Disabled state lightens text
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+}
+
+.dropdown-toggle {
+  padding: $spacer 1.5 * $spacer;
+}
+
+//
+// Tabs
+//
+
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  font-size: $font-size-base;
+
+  .rtl & {
+    text-align: right;
+  }
+
+  .nav-link {
+    @include media-breakpoint-only(sm) {
+      padding: 1rem 0;
+    }
+  }
+
+  .nav-item {
+    margin-bottom: -1px;
+ 
+    @include media-breakpoint-only(sm) {
+      width: 100%;
+    }
+  }
+
+  .nav-link {
+
+    font-weight: 400!important;
+
+    &:hover {
+      color: $blue-3;
+      border-radius: 0;
+    }
+
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $blue-3!important;
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    @include border-top-radius(0);
+  }
+}
+
+.nav-tabs-sm {
+  font-size: $font-size-sm;
+}
+
+
+//
+// Justified variants
+//
+
+.nav-fill {
+  .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.nav-justified {
+  .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-pane {
+  .col-3 {
+    a {
+      position: relative;
+
+      &:after {
+        content: '';
+        background-image: url([[pix:theme|fp/arrow-alt-circle-right-regular]]);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 15px;
+        width: 20px;
+        height: 20px;
+        right: -20px;
+        top: 1px;
+        position: absolute;
+      }
+
+    }
+  }
+}
+
+#linkcourseadmin [role="tabpanel"] h4 {
+    a {
+      position: relative;
+
+      &:after {
+        content: '';
+        background-image: url([[pix:theme|fp/arrow-alt-circle-right-regular]]);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 15px;
+        width: 20px;
+        height: 20px;
+        right: -20px;
+        top: 1px;
+        position: absolute;
+      }
+
+    }
+}
+
+.tab-content {
+
+  .form-description {
+    a {
+        font-weight: $font-weight-bold;
+    }
+  }
+
+  a {
+    color: $gray-900;
+  }
+
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

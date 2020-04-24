@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill-rule="nonzero">
+            <g id="Group-6" fill="#FBF69B">
+                <g id="Group-5">
+                    <g id="Group-4">
+                        <g id="Group-3">
+                            <g id="Group-2">
+                                <g id="Group">
+                                    <g id="icon">
+                                        <rect id="Rectangle-path" x="0" y="0" width="50" height="50" rx="5"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="plug-solid" transform="translate(18.000000, 16.000000)" fill="#87754F">
+                <path d="M10,5.625 L10,1.25 C10,0.559648438 10.5596484,0 11.25,0 C11.9403516,0 12.5,0.559648438 12.5,1.25 L12.5,5.625 L10,5.625 Z M14.375,6.25 L0.625,6.25 C0.279804687,6.25 0,6.52980469 0,6.875 L0,8.125 C0,8.47019531 0.279804687,8.75 0.625,8.75 L1.25,8.75 L1.25,10 C1.25,13.0236719 3.39722656,15.5457422 6.25,16.1248437 L6.25,20 L8.75,20 L8.75,16.1248437 C11.6027734,15.5457422 13.75,13.0236719 13.75,10 L13.75,8.75 L14.375,8.75 C14.7201953,8.75 15,8.47019531 15,8.125 L15,6.875 C15,6.52980469 14.7201953,6.25 14.375,6.25 Z M5,5.625 L5,1.25 C5,0.559648438 4.44035156,0 3.75,0 C3.05964844,0 2.5,0.559648438 2.5,1.25 L2.5,5.625 L5,5.625 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

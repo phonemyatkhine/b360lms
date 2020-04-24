@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" fill-rule="nonzero">
+            <g id="Group-5" fill="#F1EFFF">
+                <g id="Group-4">
+                    <g id="Group-3">
+                        <g id="Group-2">
+                            <g id="Group">
+                                <g id="icon">
+                                    <rect id="Rectangle-path" x="0" y="0" width="50" height="50" rx="5"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <path d="M15,25.8483594 L15,17.875 C15,16.8394531 15.8394531,16 16.875,16 L24.8483594,16 C25.3456393,16.0000026 25.822551,16.1975484 26.1741797,16.5491797 L34.4508203,24.8258203 C35.1830469,25.5580469 35.1830469,26.7452344 34.4508203,27.4774609 L26.4774609,35.4508203 C25.7452344,36.1830469 24.5580469,36.1830469 23.8258203,35.4508203 L15.5491797,27.1741797 C15.1975484,26.822551 15.0000026,26.3456393 15,25.8483594 Z M19.375,18.5 C18.3394531,18.5 17.5,19.3394531 17.5,20.375 C17.5,21.4105469 18.3394531,22.25 19.375,22.25 C20.4105469,22.25 21.25,21.4105469 21.25,20.375 C21.25,19.3394531 20.4105469,18.5 19.375,18.5 Z" id="Shape" fill="#A59AEC"></path>
+        </g>
+    </g>
+</svg>

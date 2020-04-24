@@ -1,0 +1,391 @@
+//
+// Basic Bootstrap table
+//
+
+.table,
+.generaltable,
+.grading-report,
+#defineroletable,
+.rolecap,
+.admintable,
+.gradereport-grader-table,
+#categoryquestions,
+.page-report-competency-index .table,
+.flexible,
+.forumheaderlist,
+.formsettingheading table,
+.filemanager .yui3-datatable table,
+#page-report-outline-user [id="region-main"] table,
+#page-blocks-completionstatus-details [role="main"] table.generalbox {
+  width: auto;
+  min-width: 100%;
+  margin-bottom: $spacer;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  table-layout: auto;
+  overflow: scroll;
+
+  td {
+    line-height: 1.5;
+
+    a {
+      width: auto;
+      vertical-align: middle;
+      align-items: center;
+
+      font-weight: $font-weight-sm-bold;
+      color: inherit;
+
+      &:hover {
+        color: $blue-3;
+      }
+
+    }
+  }
+
+
+  th {
+    a {
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+
+        &:hover {
+          color: $gray-700;
+        }
+    }
+  }
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: middle;
+    border-bottom: $table-border-width solid $table-border-color!important;
+
+    font-size: $font-size-sm;
+
+    .dropdown-toggle {
+      padding: .55rem 1rem!important;
+    }
+
+    .btn {
+        margin: 0 0.5rem;
+
+        .icon {
+          margin: 0;
+        }
+    }
+
+    .icon {
+      margin: 0 0.5rem;
+    }
+
+    .commands {
+      &:empty {
+        margin: 0;
+      }
+    }
+  }
+
+  thead {
+    th {
+      font-size: 0.8rem;
+      font-weight: $font-weight-sm-bold;
+      vertical-align: middle;
+
+      a {
+        display: inline-flex;
+      }
+    }
+  }
+
+  th {
+
+    font-weight: $font-weight-sm-bold;
+
+    a {
+      margin: 0!important;
+      padding: 0;
+    }
+
+    .gradeitemheader {
+      margin: 0;
+      padding: 0;
+
+      .itemicon {
+        width: 30px;
+        height: auto;
+        margin-left: 0;
+      }
+    }
+
+  }
+
+  a {
+    text-decoration: none;
+    transition: $general-transition;
+  }
+
+  thead th {
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+    font-weight: $font-weight-bold;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+    font-weight: $font-weight-normal;
+    color: $gray-800;
+  }
+
+  .table {
+    background-color: $body-bg;
+  }
+
+
+  a.action-icon {
+    padding: 6px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    line-height: 140%;
+  }
+
+}
+
+    h3 + .generaltable {
+      margin-top: 2rem;
+    }
+
+    .table {
+      width: auto;
+    }
+
+//
+// Condensed table w/ half padding
+//
+
+.table-sm {
+  th,
+  td {
+    padding: $table-cell-padding-sm;
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+
+  th,
+  td {
+    border: $table-border-width solid $table-border-color;
+  }
+
+  thead {
+    th,
+    td {
+      border-bottom-width: (2 * $table-border-width);
+    }
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  tbody tr:nth-of-type(odd) {
+    background-color: $table-accent-bg;
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  tbody tr {
+    @include hover {
+      background-color: $table-hover-bg;
+    }
+  }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+@each $color, $value in $theme-colors {
+  @include table-row-variant($color, theme-color-level($color, -9));
+}
+
+@include table-row-variant(active, $table-active-bg);
+
+
+// Dark styles
+//
+// Same table markup, but inverted color scheme: dark background and light text.
+
+// stylelint-disable-next-line no-duplicate-selectors
+.table {
+  .thead-dark {
+    th {
+      color: $table-dark-color;
+      background-color: $table-dark-bg;
+      border-color: $table-dark-border-color;
+    }
+  }
+
+  .thead-light {
+    th {
+      color: $table-head-color;
+      background-color: $table-head-bg;
+      border-color: $table-border-color;
+    }
+  }
+}
+
+.table-dark {
+  color: $table-dark-color;
+  background-color: $table-dark-bg;
+
+  th,
+  td,
+  thead th {
+    border-color: $table-dark-border-color;
+  }
+
+  &.table-bordered {
+    border: 0;
+  }
+
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: $table-dark-accent-bg;
+    }
+  }
+
+  &.table-hover {
+    tbody tr {
+      @include hover {
+        background-color: $table-dark-hover-bg;
+      }
+    }
+  }
+}
+
+
+// Responsive tables
+//
+// Generate series of `.table-responsive-*` classes for configuring the screen
+// size of where your table will overflow.
+
+.table-responsive {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+
+        // Prevent double border on horizontal scroll due to use of `display: block;`
+        > .table-bordered {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+/* table mods */
+table {
+  td {
+    .commentscontainer,
+    .ygtvitem {
+      min-width: 400px;
+    }
+  }
+
+  .comment-message {
+    .picture {
+        display: none;
+    }
+  }
+}
+
+/* assign */
+.path-mod-assign .gradingtable .c0 {
+  vertical-align: middle;
+
+  div.selectall {
+   display: inline-flex;
+   vertical-align: middle;
+  }
+
+}
+
+    .resettable {
+      margin-bottom: 1rem;
+    }
+
+
+    #page-course-view-topics {
+
+      .generaltable {
+
+        td {
+          label {
+            width: 100%!important;
+            display: block!important;
+            margin: 0.5rem 0!important;
+          }
+
+          [role=button] {
+            margin: 0.15rem 0;
+          }
+        }
+
+      }
+
+    }
+
+    .path-mod-workshop .grading-report th {
+      min-width: 600px;
+
+      a {
+        width: auto!important;
+      }
+    }
+
+    .path-mod-workshop .grading-report th.c3,
+    .path-mod-workshop .grading-report th.c5 {
+      min-width: 400px;
+    }
+
+    .submissionsummarytable {
+      overflow-x: scroll;
+    }
+
+
+    .user-enrol-details {
+      width: 100%;
+    }
+
+
+    @include media-breakpoint-between(sm,md) {
+      #page-mod-forum-view {
+        [role="main"] .no-overflow table {
+          min-width: max-content;
+        }
+      }
+    }

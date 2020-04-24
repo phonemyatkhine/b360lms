@@ -1,0 +1,385 @@
+/* Links to more pages */
+.block_socialcomments .ccomment-form-navlink {
+    margin-right: 10px;
+}
+
+/* Pins for comments and page */
+.block_socialcomments .ccomment-form-pagepinned-wrap,
+.block_socialcomments .ccomment-comments-subscribed-wrap,
+.block_socialcomments .ccomment-post-pinned-wrap {
+    float: right;
+}
+
+.block_socialcomments .ccomment-comments-count {
+    float: left;
+}
+
+/* Comments form */
+.block_socialcomments .ccomment-form-top {
+    margin-bottom: 10px;
+}
+
+.block_socialcomments .fullwidth {
+    width: 95%;
+}
+
+.block_socialcomments .ccomment-form-action-buttons {
+    text-align: right;
+}
+
+/* Form controls for comments and replies */
+.block_socialcomments .btn.ccomment-highlight-button {
+    background: red;
+}
+
+.block_socialcomments .btn {
+    background: #666;
+    color: #fff;
+    text-shadow: none;
+}
+
+.block_socialcomments .ccomment-highlight {
+    background: #f5a500;
+    color: white;
+}
+
+/* Comments */
+.block_socialcomments .ccomment-post-wrap {
+    list-style: none;
+    margin-left: 0;
+}
+
+.block_socialcomments .ccomment-post {
+    background: #fff;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Content of a comment or reply */
+#ccomment-comments-content-top {
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    color: #999;
+}
+
+.block_socialcomments .ccomment-post-userpicture .userpicture,
+.block.block_socialcomments .content .ccomment-post-userpicture .userpicture {
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-right: 6px;
+}
+
+.block_socialcomments .ccomment-post-fullname {
+    font-weight: bold;
+}
+
+.block_socialcomments .ccomment-post-timeposted {
+    color: #999;
+}
+
+/* paging bar */
+.block_socialcomments .ccomment-paging-bar {
+    text-align: center;
+}
+
+.block_socialcomments .ccomment-pagingbar-pagelink,
+.block_socialcomments .ccomment-pagingbar-curpagelink {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.block_socialcomments .ccomment-pagingbar-curpagelink {
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+/* Action menu for comments and replies */
+.jsenabled .block_socialcomments .ccomment-post-header .moodle-actionmenu[data-enhance] {
+    float: right;
+}
+
+.jsenabled .block_socialcomments .ccomment-post-header .moodle-actionmenu.show .menu::before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: -7px;
+    right: 9px;
+}
+
+.jsenabled .block_socialcomments .ccomment-post-header .moodle-actionmenu.show .menu::after {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
+    position: absolute;
+    top: -6px;
+    right: 9px;
+}
+
+.jsenabled .block_socialcomments .ccomment-post-header .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret {
+    display: none;
+}
+
+.block_socialcomments .ccomment-post-header .moodle-actionmenu.show[data-enhanced] .menu a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1em 2px 1em;
+    text-align: center;
+}
+
+/* Style checkbox as a togge switch */
+.block_socialcomments .cc-switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 22px;
+}
+
+.block_socialcomments .cc-switch input {
+    display: none;
+}
+
+.block_socialcomments .cc-switch-label {
+    text-align: center;
+    color: #666;
+}
+
+.block_socialcomments .cc-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cb2322;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 22px;
+}
+
+/* slider button */
+.block_socialcomments .cc-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.block_socialcomments .cc-switch input:checked + .slider {
+    background-color: #89b833;
+}
+
+.block_socialcomments .cc-switch input:checked + .slider:before {
+    -webkit-transform: translateX(48px);
+    -ms-transform: translateX(48px);
+    transform: translateX(48px);
+}
+
+.block_socialcomments .cc-switch .labelyes,
+.block_socialcomments .cc-switch .labelno {
+    position: absolute;
+    height: 22px;
+    line-height: 22px;
+    color: white;
+    text-align: center;
+}
+
+.block_socialcomments .cc-switch .labelyes {
+    left: 5px;
+    right: 25px;
+}
+
+.block_socialcomments .cc-switch .labelno {
+    right: 5px;
+    left: 25px;
+}
+
+.block_socialcomments .cc-switch input + .slider .labelyes {
+    display: none;
+}
+
+.block_socialcomments .cc-switch input:checked + .slider .labelyes {
+    display: block;
+}
+
+.block_socialcomments .cc-switch input:checked + .slider .labelno {
+    display: none;
+}
+
+/* Comments reply link and pin */
+.block_socialcomments .comments-post-footer a,
+.block_socialcomments .comments-post-footer a:visited {
+    color: #666;
+}
+.block_socialcomments .ccomment-post-pinned-wrap input:checked + label,
+.block_socialcomments .ccomment-form-pagepinned-wrap input:checked + label,
+.block_socialcomments .ccomment-post-pinned-wrap input[type="checkbox"] + label,
+.block_socialcomments .ccomment-form-pagepinned-wrap input[type="checkbox"] + label {
+    display: block;
+    width: 22px;
+    height: 17px;
+    padding: 0;
+    color: transparent;
+}
+
+.block_socialcomments .ccomment-post-pinned-wrap input:checked + label,
+.block_socialcomments .ccomment-form-pagepinned-wrap input:checked + label {
+    background-image: url([[pix:block_socialcomments|commentpinned]]);
+}
+
+.block_socialcomments .ccomment-post-pinned-wrap input + label,
+.block_socialcomments .ccomment-form-pagepinned-wrap input + label {
+    background-image: url([[pix:block_socialcomments|commentunpinned]]);
+}
+
+.block_socialcomments .ccomment-post-pinned-wrap input,
+.block_socialcomments .ccomment-form-pagepinned-wrap input {
+    display: none;
+}
+
+/* Replies */
+.block_socialcomments .ccomment-reply-list {
+    list-style: none;
+    margin: 0 0 15px 15px;
+}
+
+.block_socialcomments .ccomment-reply-wrap {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Style speech bubble */
+#ccomment-replyform .form-control {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+}
+
+.block_socialcomments .ccomment-reply-wrap::before,
+#ccomment-replyform .form-control::before {
+    content: '';
+    display: inline-block;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ccc;
+    position: absolute;
+    left: 13px;
+    top: -8px;
+}
+
+.block_socialcomments .ccomment-reply-wrap::after,
+#ccomment-replyform .form-control::after {
+    content: '';
+    display: inline-block;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 9px solid #fff;
+    position: absolute;
+    left: 13px;
+    top: -7px;
+}
+
+/* Exclude from speech bubble style, when editing */
+.block_socialcomments .ccomment-reply-wrap #ccomment-replyform .form-control {
+    position: static;
+}
+
+/* Special tooltip */
+.block_socialcomments .cctooltip {
+    position: relative;
+}
+
+.block_socialcomments .cctooltip:hover {
+    text-decoration: none;
+}
+.block_socialcomments .cctooltip > span {
+    z-index: 10;
+    display: none;
+    padding: 1px 3px;
+    line-height: 16px;
+    border-radius: 4px;
+    position: absolute;
+    top: -26px;
+    font-size: 0.8em;
+    background: #bed6e3;
+    white-space: nowrap;
+}
+.block_socialcomments .cctooltip:hover > span {
+    display: block;
+}
+
+.block_socialcomments .ccomment-form-navlink-wrap {
+    float: left;
+    margin-top: 10px;
+}
+
+.block_socialcomments .ccomments-courseselect .jumpmenu div,
+.block_socialcomments .ccomments-courseselect .jumpmenu,
+.block_socialcomments .ccomments-courseselect form {
+    display: inline;
+}
+
+.block_socialcomments .ccomments-courseselect select {
+    margin: 0;
+}
+
+.block_socialcomments .ccomments-courseselect span {
+    margin-right: 5px;
+}
+
+.block_socialcomments .ccomments-courseselect {
+    padding: 10px;
+    background: #efefef;
+}
+
+.block_socialcomments .ccomments-no-pins .ccomment-form-pagepinned-wrap,
+.block_socialcomments .ccomments-no-pins .ccomment-post-pinned-wrap {
+    display: none;
+}
+
+.block_socialcomments .ccomments-pin-tooltip {
+    position: absolute;
+    margin-top: -45px;
+    margin-left: -10px;
+    background: #cad8b1;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+.block_socialcomments .ccomment-post-pinned-wrap div.ccomments-pin-tooltip,
+.block_socialcomments .ccomment-form-pagepinned-wrap div.ccomments-pin-tooltip {
+    display: none;
+}
+
+.block_socialcomments .ccomment-post-pinned-wrap:hover div.ccomments-pin-tooltip,
+.block_socialcomments .ccomment-form-pagepinned-wrap:hover div.ccomments-pin-tooltip {
+    display: block;
+}
+
+
+.block_socialcomments div#ccomment-form-content img.icon {
+    height: 30px;
+    width: 35px;
+}
+
+.block_socialcomments div.ccomment-commentspage img.icon {
+    width: auto;
+}

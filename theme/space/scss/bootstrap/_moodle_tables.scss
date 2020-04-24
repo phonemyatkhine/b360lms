@@ -1,0 +1,335 @@
+
+.cap-desc {
+  font-weight: $font-weight-bold;
+}
+
+
+#page-admin-roles-permissions {
+  .preventlink, .forbidden {
+    margin-right: 5px!important;
+    margin-bottom: 8px!important;
+    display: inline-flex!important;
+  }
+
+  .allowlink, .prohibitlink {
+    margin-right: 5px!important;
+    margin-bottom: 5px!important;
+    display: inline-flex!important;
+  }
+
+  .preventlink, .prohibitlink, .allowlink, .forbidden {
+    padding: 6px;
+  }
+
+  .preventlink {
+    margin-bottom: 0;
+  }
+
+  .allowed {
+    display: block!important;
+  }
+
+  .allowed {
+    margin-bottom: 0.5rem;
+    min-width: 200px;
+  }
+
+  .allowmore {
+    display: block;
+    width: 100%;
+  }
+}
+
+      .gradereport-grader-table {
+          th.user {
+            a {
+              padding: 0;
+              margin: 0;
+
+              img {
+                margin: 0 0.5rem 0 0;
+                padding: 0;
+              }
+            }
+          }
+      }
+
+.generaltable,
+.grading-report,
+#defineroletable,
+.rolecap,
+.admintable,
+.gradereport-grader-table,
+#categoryquestions,
+.page-report-competency-index .table,
+.flexible,
+.forumheaderlist,
+.userenrolment,
+.mod_index,
+.criteria,
+#page-blocks-completionstatus-details [role="main"] table.generalbox
+{
+  width: 100%;
+
+  thead {
+    a {
+      font-weight: $font-weight-sm-bold;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    th {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  tbody {
+    th {
+      background-color: transparent;
+    }
+  }
+
+  .header, th {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $gray-100;
+
+    font-size: $font-size-xs!important;
+    font-weight: $font-weight-bold;
+    color: #555!important;
+    text-transform: uppercase;
+
+    .icon {
+      font-size: $font-size-xs;
+      width: $font-size-xs;
+      height: auto;
+    }
+
+    a {
+      .icon.itemicon {
+        width: $font-size-xs;
+        height: auto;
+        margin-right: 0.5rem;
+      }
+    }
+
+    strong, a, span {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  th, td {
+    padding: 0.75rem;
+    vertical-align: middle;
+
+    border-radius: 0;
+
+    text-align: left;
+    font-size: $font-size-sm;
+    color: $gray-900;
+
+    .btn {
+      margin: 0.25rem!important;
+    }
+
+    .icon {
+      margin: 0.25rem!important;
+    }
+
+    .comment-link {
+      min-width: 120px;
+    }
+  }
+
+}
+
+#defineroletable .header, .rolecap .header {
+  background-color: $gray-400;
+  border-bottom: 1px solid $gray-400;
+  color: $gray-900!important;
+  font-weight: $font-weight-bold;
+}
+
+//modification for /message/defaultoutputs.php
+.cell {
+  div {
+    margin: 0.5rem 0;
+
+    &:last-of-type {
+      margin: 0.5rem 0 0;
+    }
+  }
+}
+
+.risk {
+  .btn {
+    img {
+      width: 18px;
+      height: auto;
+    }
+  }
+}
+
+/* reset YUI styles */
+.yui3-skin-sam {
+  .yui3-datatable-table {
+    font-family: inherit;
+  }
+}
+
+
+/* Grades - Tech-enabled Learning - User report */
+#page-course-user {
+  .column-itemname {
+    .icon {
+      margin-right: 1rem!important;
+
+      display: inline-flex;
+    }
+  }
+
+  .gradeitemheader {
+    line-height: 1.5;
+  }
+}
+
+
+/* Dashboard - My courses - Course - Grades - Single view */
+#page-grade-report-singleview-index {
+  [role="main"] {
+    .cell {
+      .form-control {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+/* mod for enrol/manual/manage.php */
+.roleassigntable {
+  td {
+    vertical-align: top;
+  }
+}
+
+.enroloptions {
+  select {
+    width: 100%;
+  }
+
+  p {
+    margin: $spacer 0;
+  }
+}
+
+.surveytable {
+  width: 100%!important;
+}
+
+
+.scale_options {
+  margin-top: 0.5rem;
+  font-size: $font-size-xs;
+  color: $gray-600;
+}
+
+      /* file manager */
+      table.ygtvtable {
+        width: 100%;
+      }
+
+
+      .no-overflow {
+        overflow-x: auto;
+
+        table {
+          width: 100%;
+          max-width: max-content;
+        }
+      }
+
+      .otherusersdesc {
+        margin-bottom: 2rem;
+      }
+
+.path-grade-report-singleview div.reporttable {
+  overflow-x: scroll;
+}
+
+
+#page-grade-report-singleview-index {
+  .generaltable th .icon {
+    width: auto;
+    margin-right: 1rem!important;
+  }
+}
+
+
+#page-admin-roles-permissions {
+  .generalbox.capbox {
+    overflow-x: auto;
+
+    #permissions {
+      min-width: 100%;
+      width: max-content;
+    }
+  }
+}
+
+
+#page-admin-plugins,
+#page-admin-filters
+{
+  [role="main"] {
+    overflow: auto;
+
+    .generaltable {
+      min-width: max-content;
+    }
+  }
+}
+
+#page-mod-assign-grading {
+
+  overflow-x: hidden;
+
+  .path-mod-assign #page, .path-mod-assign #page-content {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .no-overflow {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    table {
+      min-width: 100%;
+      width: max-content;
+    }
+  }
+
+  table td {
+    vertical-align: middle;
+
+    p {
+      min-width: 200px;
+      font-size: $font-size-xs;
+      line-height: 1.3;
+    }
+
+  }
+
+}
+
+  #page-mod-assign-grading {
+    .path-mod-assign #page, .path-mod-assign #page-content {
+      position: relative;
+      overflow-x: hidden;
+    }
+  }
+
+  #printablediv { overflow-x: auto; }
+
+  [data-region="plan-competencies"] {
+    margin-top: 2rem!important;
+  }

@@ -1,0 +1,957 @@
+// Other
+.block_myoverview {
+  background-color: transparent!important;
+  padding: 0!important;
+
+  .card-body {
+    padding: 0!important;
+  }
+}
+
+//
+// Base styles
+//
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+
+  background-color: $gray-100;
+  border-radius: $border-radius;
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  > .list-group:first-child {
+    .list-group-item:first-child {
+      @include border-top-radius($card-border-radius);
+    }
+  }
+
+  > .list-group:last-child {
+    .list-group-item:last-child {
+      @include border-bottom-radius($card-border-radius);
+    }
+  }
+
+}
+
+
+.card-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+
+  position: relative;
+
+  @include media-breakpoint-between(sm,md) {
+    text-align: left;
+  }
+
+  @include media-breakpoint-only(sm) {
+    padding: 1.25rem;
+  }
+
+  .action-menu-item {
+    position: absolute;
+    top: -17px;
+    left: -17px;
+    line-height: 1;
+
+    .category-item-actions & {
+      position: relative;
+      top: auto;
+      left: auto;
+    }
+
+      .editing_move,
+      .moodle-core-dragdrop-draghandle {
+        .icon {
+         background-color: rgba(255, 255, 255, 0.9);
+         padding: 13px 14px;
+         border-radius: $border-radius;
+
+         border: 2px dashed #E4E8F0;
+         box-shadow: $btn-box-shadow;
+
+         color: $gray-900;
+         font-size: 12px;
+         width: 12px;
+         height: 11px;
+       }
+      }
+  }
+
+
+
+  .action-menu-trigger {
+    .dropdown-toggle {
+      padding: 5px 7px;
+    }
+  }
+
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  color: $gray-900;
+
+  [role=main] & {
+    text-align: left;
+
+    @include media-breakpoint-only(sm) {
+      text-align: center;
+    }
+  }
+
+  h5 {
+    font-size: 0.65rem;
+  }
+}
+
+.card-subtitle {
+  font-size: $font-size-sm;
+  color: $gray-600;
+}
+
+.card-content {
+  margin: 2 * $spacer 0;
+
+  &.submissionaction {
+    margin: 0;
+  }
+
+  .generalbox & {
+    font-size: $font-size-base;
+    color: $gray-800;
+  }
+
+  h2 {
+    margin: $spacer 0;
+  }
+
+  ol, ul, dl {
+    margin-bottom: 3 * $spacer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.card-text {
+  font-size: $font-size-base * 0.85;
+  color: $gray-800;
+
+  .rtl & {
+    text-align: right;
+  }
+
+  h3 {
+    font-size: $font-size-sm;
+
+    a {
+      color: $gray-900;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .list {
+	  margin: 0;
+	  padding: 0;
+
+	  li {
+		  list-style: none;
+
+		  a {
+			  font-weight: $font-weight-sm-bold;
+			  color: $gray-800;
+
+			  transition: $general-transition;
+
+			  &:hover {
+				  color: $blue-3;
+			  }
+		  }
+	  }
+  }
+
+  .footer {
+    margin-top: $spacer;
+
+    &:empty {
+      display: none;
+    }
+
+    a {
+      display: block;
+
+      font-size: $font-size-xs;
+    }
+  }
+
+  p {
+    font-size: $font-size-sm;
+  }
+
+}
+
+#page-user-preferences {
+
+  .card-body {
+      font-size: $font-size-base;
+
+      .card-title {
+        font-size: 1.5rem!important;
+        font-weight: $font-weight-sm-bold!important;
+        margin-bottom: 1rem;
+      }
+
+      .card-text {
+        div {
+        margin-bottom: 1rem;
+        }
+      }
+
+      a {
+        font-size: 1rem;
+        color: $gray-800;
+
+        &:hover {
+          color: $blue-3;
+          text-decoration: none;
+        }
+      }
+  }
+
+}
+
+.card-link {
+  @include hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+//
+// Optional textual caps
+//
+
+.card-header {
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  &:first-child {
+    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+  }
+
+  + .list-group {
+    .list-group-item:first-child {
+      border-top: 0;
+    }
+  }
+}
+
+.card-footer {
+  &:last-child {
+    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+  }
+}
+
+
+//
+// Header navs
+//
+
+.card-header-tabs {
+  margin-right: -($card-spacer-x / 2);
+  margin-bottom: -$card-spacer-y;
+  margin-left: -($card-spacer-x / 2);
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -($card-spacer-x / 2);
+  margin-left: -($card-spacer-x / 2);
+}
+
+// Card image
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $card-img-overlay-padding;
+}
+
+.card-img {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  height: 190px;
+  @include border-radius($card-inner-border-radius);
+}
+
+// Card image caps . Moodle 3.5
+.card-img-top {
+  width: calc(100% + 5rem);
+  margin: -2rem -2.5rem 1rem;
+
+  #page-enrol-index & {
+    padding-bottom: 2rem;
+    height: 190px;
+    background-size: cover;
+  }
+
+  .frontpage-course-list-all & {
+    margin-bottom: 1rem;
+  }
+
+  #page-site-index & {
+    margin-top: 0;
+  }
+}
+
+
+
+.card-img-bottom {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-bottom-radius($card-inner-border-radius);
+}
+
+
+// Card deck
+
+.card-deck {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    margin-bottom: $card-deck-margin;
+  }
+
+  @include media-breakpoint-up(md) {
+    flex-flow: row wrap;
+    margin-right: -$card-deck-margin;
+    margin-left: -$card-deck-margin;
+
+    .card {
+      display: flex;
+      // Flexbugs #4: https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+      flex: 1 0 0%;
+      flex-direction: column;
+      margin-right: $card-deck-margin;
+      margin-bottom: 0; // Override the default
+      margin-left: $card-deck-margin;
+    }
+  }
+}
+
+
+//
+// Card groups
+//
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+
+  // The child selector allows nested `.card` within `.card-group`
+  // to display properly.
+  > .card {
+    margin-bottom: $card-group-margin;
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-flow: row wrap;
+    // The child selector allows nested `.card` within `.card-group`
+    // to display properly.
+    > .card {
+      // Flexbugs #4: https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+      flex: 1 0 0%;
+      margin-bottom: 0;
+
+      + .card {
+        margin-left: 0;
+        border-left: 0;
+      }
+
+      // Handle rounded corners
+      @if $enable-rounded {
+        &:first-child {
+          @include border-right-radius(0);
+
+          .card-img-top,
+          .card-header {
+            border-top-right-radius: 0;
+          }
+          .card-img-bottom,
+          .card-footer {
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &:last-child {
+          @include border-left-radius(0);
+
+          .card-img-top,
+          .card-header {
+            border-top-left-radius: 0;
+          }
+          .card-img-bottom,
+          .card-footer {
+            border-bottom-left-radius: 0;
+          }
+        }
+
+        &:only-child {
+          @include border-radius($card-border-radius);
+
+          .card-img-top,
+          .card-header {
+            @include border-top-radius($card-border-radius);
+          }
+          .card-img-bottom,
+          .card-footer {
+            @include border-bottom-radius($card-border-radius);
+          }
+        }
+
+        &:not(:first-child):not(:last-child):not(:only-child) {
+          @include border-radius(0);
+
+          .card-img-top,
+          .card-img-bottom,
+          .card-header,
+          .card-footer {
+            @include border-radius(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//
+// Columns
+//
+
+.card-columns {
+  .card {
+    margin-bottom: $card-columns-margin;
+  }
+
+  @include media-breakpoint-up(sm) {
+    column-count: $card-columns-count;
+    column-gap: $card-columns-gap;
+
+    .card {
+      display: inline-block; // Don't let them vertically span multiple columns
+      width: 100%; // Don't let their width change
+    }
+  }
+}
+
+
+/* Extend */
+.userprofile .profile_tree section {
+  @extend .card-body;
+}
+
+
+// Well -> Panel -> Card. We skipped panel (BS3) so lets just support well and card.
+.well,
+.userprofile .profile_tree section,
+.que .history,
+.groupinfobox
+{
+    @extend .card;
+}
+
+/* mod */
+.block_activity_results {
+  table.grades {
+   caption {
+     font-size: $font-size-sm;
+   }
+
+   a {
+     color: $gray-800;
+   }
+  }
+}
+
+/* Since Moodle 3.6+ */
+
+
+.summaryimage {
+  width: 200px;
+  height: 200px;
+  border-radius: $border-radius;
+
+  @include media-breakpoint-only(sm) {
+    border-radius: $border-radius $border-radius 0 0;
+    width: 100%;
+  }
+}
+
+
+/* Course overview OLD ONE */
+.c-course-box {
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  [data-display="summary"] & {
+    overflow: inherit;
+  }
+
+  .coursecat {
+    margin-top: 1rem;
+  }
+
+  #page-enrol-index & {
+    max-width: 500px;
+  }
+
+
+  .c-course-box-content {
+    height: calc(100% - 250px);
+  }
+
+  .c-course-content {
+    height: 100%;
+    border: 1px solid $gray-400;
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: 2rem 1.5rem 1.5rem;
+
+    position: relative;
+
+    .course-summaryitem & {
+      padding: 2rem;
+    }
+
+    #page-enrol-index & {
+      padding-bottom: 2rem;
+    }
+
+    .dropdown {
+      position: absolute;
+
+      top: 10px;
+      right: 10px;
+
+      [data-prev-display="cards"] & {
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    #page-site-index & {
+      padding-top: 0;
+      overflow: hidden;
+    }
+  }
+
+  .courses-view-course-item-footer {
+    margin: 0 0 -0.5rem;
+    padding: 0;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .coursename {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .course-box-title {
+    margin-bottom: 0.5rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-sm-bold;
+    color: $gray-900;
+
+    transform: $general-transition;
+
+    display: inline-flex;
+
+    a {
+      color: $gray-900;
+
+      transition: $general-transition;
+
+      &:hover {
+        text-decoration: none;
+        color: $blue-3;
+      }
+    }
+
+    &:hover {
+		  text-decoration: none;
+	    color: $blue-3;
+    }
+
+    &:before {
+      display: none;
+    }
+
+  }
+
+  .course-box-desc {
+    margin-bottom: 1rem;
+    font-size: $font-size-xs;
+    color: $gray-700;
+
+    word-break: break-word;
+
+    .no-overflow {
+      overflow: hidden;
+    }
+  }
+}
+
+  [data-region="favourite-icon"] {
+    .icon {    
+      display: block!important;
+      position: absolute;
+      top: 18px;
+      left: 20px;
+  
+      width: 32px;
+      height: 32px;
+  
+      margin: 0!important;
+  
+      background-color: rgba(0, 0, 0, 0.45);
+      border-radius: $border-radius;
+
+      font-size: $font-size-xs!important;
+      color: $yellow!important;
+      line-height: 2.6!important;
+      text-align: center;
+    }
+  }
+
+  .c-course-box {
+
+    .coursename, .course-box-title {
+
+      .course-box-icons {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+ 
+        .course-box-icons-list {
+          padding: 0;
+          margin: 0;
+    
+          display: inline-flex;
+          list-style: none;
+    
+          @include media-breakpoint-only(sm) {
+            top: 50px;
+            left: -3px;
+          }
+    
+          li {
+            margin: 0 0 0 3px;
+            width: 32px;
+            height: 32px;
+    
+            background-color: rgba(0, 0, 0, 0.45);
+            border-radius: $border-radius;
+    
+            line-height: 2;
+            text-align: center;
+      
+            .icon {    
+              font-size: $font-size-xs;
+              color: $white;
+        
+              &.fa-star {
+                color: $yellow!important;
+              }
+            }
+    
+            img {
+              width: 12px;
+              height: auto;
+            }
+          }
+        }        
+
+      }
+
+    }
+  }
+
+
+        [data-display="summary"],
+        [data-display="list"] {
+          .coursename .icon {
+            background-color: rgba($yellow, 0.2);
+          }
+        }
+
+        [data-display="summary"] {
+          .coursename .icon.fa-star {
+            top: 2px;
+            left: 2px;
+          }
+        }
+
+        [data-display="list"] {
+
+          .coursename .icon {
+            display: block!important;
+            margin: 0;
+            position: absolute;
+          }
+
+          .coursename .icon.fa-star {
+            top: -31px;
+            left: -31px;
+          }
+        }
+
+
+
+/* moodle 3.7 */
+.dashboard-card {
+  .c-course-box {
+    margin-bottom: 0;
+
+    height: 100%;
+
+    align-self: stretch;
+  }
+}
+
+.block-starredcourses {
+  .c-course-box {
+    margin-bottom: 1rem;
+  }
+}
+
+.course-contacts {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+
+  width: calc(100% - 190px);
+
+  a {
+    margin-left: -10px;
+    margin-bottom: 5px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  .c-courses-teacher-avatar {
+    width: 40px;
+    height: 40px;
+    border: 3px solid $white;
+  }
+
+  .c-courses-teacher-name {
+    margin: 0;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    color: $gray-800;
+  }
+}
+
+.c-course-box-fp {
+  padding: 0;
+  margin: 0 -23px;
+
+  .courses-view-course-item-footer {
+    padding: 1rem;
+  }
+
+}
+
+.card.block_settings {
+  .form-group {
+    width: 100%;
+  }
+}
+
+[data-region="recentlyaccessedcourses-view"] {
+  .coursename { font-size: 0.75rem; }
+  .text-muted { font-size: 0.75rem; }
+}
+
+.block_myoverview .coursename {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.block_myoverview, [data-region="recentlyaccessedcourses-view"] {
+
+  h5.card-title {
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: $font-weight-sm-bold;
+  }
+
+  .card {
+    background: transparent;
+  }
+
+  .coursename {
+    font-weight: $font-weight-sm-bold;
+    line-height: 1.4;
+    color: $gray-900;
+
+    transform: $general-transition;
+
+    display: inline-flex;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    .icon {
+      margin: 0 0.15rem 0 0;
+      display: inline-flex;
+      color: $yellow;
+      font-size: $font-size-xs;
+      line-height: 1.4;
+     }
+  }
+
+  .list-group-item {
+    position: relative;
+
+    font-size: $font-size-base;
+    font-weight: $font-weight-sm-bold;
+
+    .coursename {
+      margin-bottom: 0;
+      display: block;
+    }
+
+  }
+
+      .list-group-item--favourite {
+        border: 2px solid rgba($yellow, 0.3);
+      }
+
+  .progress-bar-text {
+    margin: .5rem 0 0;
+
+    font-size: $font-size-xs;
+    font-weight: $font-weight-sm-bold;
+    color: $gray-700;
+    text-align: left;
+  }
+
+  .progress {
+    width: 100%;
+    height: 10px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    .progress-bar {
+      background: $blue; /* fallback for old browsers */
+      background: -webkit-linear-gradient(165deg, $blue, $blue-3); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(165deg, $blue, $blue-3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+  }
+
+  .dashboard-card {
+    padding: 0; /* moodle 3.7 */
+  }
+
+  .card-img {
+    box-sizing: content-box;
+
+    width: calc(100% + 4rem);
+    margin: -2rem -2rem 0;
+
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card-deck {
+    .card {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: calc(25% - 30px);
+
+      margin-bottom: 30px;
+
+      @media (min-width: 2342px) {
+        flex-basis: calc(20% - 30px);
+      }
+
+      @media (max-width: 2341px) {
+        flex-basis: calc(25% - 30px);
+      }
+
+      @media (max-width: 1900px) {
+        flex-basis: calc(33.33333% - 30px);
+      }
+
+      @media (max-width: 1440px) {
+        flex-basis: calc(50% - 30px);
+      }
+
+      @media (max-width: 700px) {
+        flex-basis: calc(100% - 30px);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .c-course-box.course-summaryitem .c-course-content .dropdown {
+    top: -55px;
+  }
+}
+
+#page-enrol-index {
+  [role="main"] {
+    display: table;
+
+    .box {
+      [type="submit"],
+      [type="password"]
+      {
+        width: 100%;
+      }
+    }
+
+  }
+
+  #notice {
+    font-weight: $font-weight-bold;
+  }
+}

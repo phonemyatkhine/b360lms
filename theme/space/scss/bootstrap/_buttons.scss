@@ -1,0 +1,1074 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.dropdown-toggle {
+  table & {
+    padding: 0.5rem 1rem;
+  }
+
+  &:before {
+    display: none;
+  }
+}
+
+#installfromrepobox {
+  .btn-icon {
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+  }
+}
+
+.btn-icon {
+  display: inline-block;
+  text-decoration: none;
+
+  &[data-toggle="popover"] {
+      padding: 0 10px;
+      width: 40px;
+      text-align: center;
+
+      i {
+        margin: 0;
+      }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+[data-fieldtype="date_time_selector"] {
+  a {
+    padding: 10px;
+    line-height: 0;
+  }
+}
+
+.btn,
+#page-grade-grading-manage .actions .action,
+.fdescription a,
+.form-control-static a,
+.moodle-dialogue-bd [data-cancel-button],
+.modal-dialog .modal-footer a,
+.backlink a,
+.tool_dataprivacy-expand-all,
+#prev-activity-link,
+#next-activity-link,
+.section-handle.moodle-core-dragdrop-draghandle,
+.filepicker-filename a,
+.forumpost .footer a,
+#page-admin-roles-permissions .preventlink,
+#page-admin-roles-permissions .preventlink .forbidden,
+#page-admin-roles-permissions .allowlink,
+#page-admin-roles-permissions .prohibitlink,
+.generaltable a.action-icon,
+table.form-autocomplete-suggestions,
+.form-autocomplete-suggestions a,
+fieldset .form-autocomplete-suggestions a,
+[data-action="addstandardtag"],
+#page-admin-roles-permissions .role_buttons input[type="button"],
+#page-grade-edit-letter-index #region-main .mdl-align a,
+.path-admin-tool-assignmentupgrade #region-main div:last-child.mdl-align a,
+#page-admin-user-profile-index a[title="Edit"],
+#page-admin-user-profile-index a[title="Delete"],
+#page-admin-tool-httpsreplace-index [role="main"] p a,
+[data-fieldtype="tags"] a,
+#adminsettings fieldset h3 a:not([class=btn-icon]),
+.collapsibleregioncaption a:not(.btn-icon),
+.notesgroup p a,
+/* btn-sm */
+td .commands a,
+.discussionsubscription a,
+/* btn-reset */
+.resettable a,
+#page-course-switchrole [role="main"] .m-b-1:last-of-type a,
+/* btn-primary */
+.allcoursegrades a,
+.createstep,
+.card-text .footer + a,
+#page-tag-search #tag-search-box form input[type="submit"],
+.notification-area .content-area .footer a,
+#changenumsections a,
+#page-admin-grade-edit-letter-index #region-main .mdl-align a,
+#page-admin-setting-webservicetokens [role="main"] fieldset a,
+.logselecform input[type="submit"],
+#page-mod-forum-subscribers .subscribertable tr td.actions .actionbutton,
+input.form-submit,
+#id_addidnumbers,
+.section-modchooser-link a,
+/* btn-xs */
+.editquestion a,
+#page-mod-quiz-attempt .questionflag,
+a.action-icon,
+.iconcol a,
+.addbloglink a,
+.progress-actions a,
+.dropdown-toggle,
+.backlink a,
+.action-menu .dropdown-toggle,
+.section-modchooser .section-modchooser-link a,
+.feedback_mapped_courses .mdl-align a,
+#buttonscell input[type="submit"],
+.typesummary .helplinkpopup,
+#page-mod-quiz-edit .editing_section,
+#page-mod-glossary-view .commands a.icon,
+#page-mod-glossary-showentry .commands a.icon,
+.comment-area .fd a,
+.subscribelink a,
+.forumpost .link a,
+.reportlink a,
+#showall a,
+.printicon,
+.comment-link,
+.recipelink a,
+.midpad a,
+.addtomyinterests,
+.flagasinappropriate,
+.removefrommyinterests,
+.edittag,
+[data-action="delete-competency-link"],
+#participants td a[role="button"],
+.usp-finish [type="submit"],
+.bookprev,
+.booknext,
+.bookexit,
+.submitbtns .arrow_link,
+.mod_quiz-next-nav,
+.edit_pages_box .addlinks a,
+.newlink a,
+.book_toc_numbered .action-list a,
+.activity .action-menu-item a,
+.checkforupdates [type="submit"],
+.continuebutton [type="submit"],
+#page-mod-quiz-report .toggleincludeauto a,
+.paging-morelink,
+.userpicture a:not(:first-child),
+#page-user-profile .node_category .viewmore a, .path-user .node_category .viewmore a,
+.path-mod-quiz .othernav a,
+#enabletemplateeditor,
+.itemnav a,
+.section-navigation a,
+.availability-delete,
+.cancel a,
+.usp-search-btn,
+.block_blog_menu [type="submit"],
+.forum-post-footer a,
+.tag-backtoallitems a,
+.tool_dataprivacy a,
+[data-region="actions"] p a,
+.path-mod-forum .discussion-nav .next-discussion,
+.path-mod-forum .discussion-nav .prev-discussion,
+.c-lang-menu .dropdown-toggle,
+.qtype_multichoice_clearchoice a,
+.usertour a,
+#theme_switch_link a,
+.quizattemptcounts a,
+#page-enrol-index .box [type="submit"]
+{
+  display: inline-block;
+  text-align: center;
+
+  vertical-align: middle;
+
+  border-radius: $border-radius;
+
+  padding: $btn-padding-y $btn-padding-x;
+
+  font-size: 0.85 * $font-size-base;
+  font-weight: $btn-font-weight;
+  color: $gray-800;
+
+  .icon {
+    font-size: 0.85 * $font-size-base;
+  }
+
+  text-decoration: none;
+  @include transition($btn-transition);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+  .btn {
+
+      .tag {
+        background-color: $blue-3;
+      }
+
+      .icon {
+        font-size: 1rem;
+        line-height: 1;
+        margin: 0;
+
+        &.fa-cog {
+          margin: 0;
+        }
+
+        &.fa-search-plus {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .icon + .d-sm-inline-block,
+      .icon + .header-button-title,
+      .icon + span {
+        margin-left: 0.5rem;
+      }
+
+      // Share hover and focus styles
+      @include hover-focus {
+        text-decoration: none;
+      }
+
+      &:focus,
+      &.focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+      }
+
+      // Disabled comes first so active can properly restyle
+      &.disabled,
+      &:disabled {
+        opacity: $btn-disabled-opacity;
+        @include box-shadow(none);
+        cursor: not-allowed;
+      }
+
+      // Opinionated: add "hand" cursor to non-disabled .btn elements
+      &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled).active {
+        @include box-shadow($btn-active-box-shadow);
+
+        &:focus {
+          @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+      }
+  }
+
+.btn-primary,
+.allcoursegrades a,
+.createstep,
+#page-tag-search #tag-search-box form input[type="submit"],
+.notification-area .content-area .footer a,
+#changenumsections a,
+#page-admin-grade-edit-letter-index #region-main .mdl-align a,
+#page-admin-setting-webservicetokens [role="main"] fieldset a,
+.logselecform input[type="submit"],
+#page-mod-forum-subscribers .subscribertable tr td.actions .actionbutton,
+input.form-submit, #id_addidnumbers,
+.section-modchooser-link a,
+.addbloglink a,
+.progress-actions a,
+.discussionsubscription a,
+.block .footer a,
+.section-modchooser .section-modchooser-link a,
+#addcontrols #add,
+.mod_quiz-next-nav,
+.newlink a,
+.checkforupdates [type="submit"],
+.continuebutton [type="submit"],
+.bookexit,
+#newentryform .btn-secondary,
+.quizattempt [type="submit"],
+#page-mod-quiz-summary .submitbtns [type="submit"],
+.path-mod-quiz .othernav a,
+#enabletemplateeditor,
+.usp-finish [type="submit"],
+.block_blog_menu [type="submit"],
+.forum-post-footer a,
+.btn-dark,
+[data-region="actions"] p a,
+.quizattemptcounts a,
+#page-enrol-index .box [type="submit"]
+{
+  color: $white!important;
+
+  background: $blue-3!important;
+  border: 1px solid $blue-3!important;
+  box-shadow: 0 2px 4px rgba(7,66,205,.3)!important;
+  transition: $btn-transition;
+
+  &:hover {
+    box-shadow: 0 1px 1px rgba($blue-3,0.08),
+                0 2px 2px rgba($blue-3,0.12),
+                0 2px 4px rgba($blue-3,0.14),
+                0 2px 8px rgba($blue-3,0.16),
+                0 8px 10px rgba($blue-3,0.18)!important;
+  }
+
+  i {
+    color: $white;
+  }
+}
+
+      .path-mod-quiz .othernav a {
+        display: block;
+      }
+
+      .comment-delete {
+        padding: 0.5rem;
+
+        a {
+          &:before {
+            display: none;
+          }
+        }
+
+        .icon {
+          font-size: 14px;
+          color: $gray-800;
+        }
+      }
+
+      .forumpost .footer a {
+        &:before {
+          display: none;
+        }
+      }
+
+      .newlink a {
+        width: 100%;
+      }
+
+.btn-reset,
+.btn-danger,
+.resettable a,
+#page-course-switchrole [role="main"] .m-b-1:last-of-type a,
+#removecontrols #remove,
+[data-action="delete-competency-link"],
+.submit_buttons [name="cancel"],
+.usertour a
+{
+  color: $white;
+
+  background-color: $red;
+  box-shadow: 0 1px 1px rgba($red,.08),0 1px 1px rgba($red,.12),0 1px 3px rgba($red,.14),0 1px 3px rgba($red,.16),0 1px 4px rgba($red,.18);
+
+
+  border: 0;
+
+  transition: $btn-transition;
+
+  i {
+      color: $white;
+  }
+
+  &:hover {
+    color: $white;
+    box-shadow: 0 1px 1px rgba($red,0.08), 0 2px 2px rgba($red,0.12), 0 4px 4px rgba($red,0.14), 0 6px 8px rgba($red,0.16),0 8px 16px rgba($red,0.18) !important;
+  }
+}
+
+.btn-special {
+  background-color: $purple;
+  border: 0;
+  color: $white;
+
+  box-shadow: 0 1px 1px rgba($purple,0.15),
+              0 2px 2px rgba($purple,0.15),
+              0 4px 4px rgba($purple,0.15),
+              0 8px 8px rgba($purple,0.15);
+
+  &:hover{
+    box-shadow: 0 1px 3px rgba($purple,0.25),
+                0 2px 5px rgba($purple,0.25),
+                0 4px 7px rgba($purple,0.25),
+                0 8px 9px rgba($purple,0.25);
+  }
+}
+
+    /* force btn-reset for delete button - filemanager */
+    .fp-file-delete {
+      color: $white;
+
+      background: $red!important;
+      box-shadow: 0 2px 15px 0 rgba(234, 12, 12, 0.25)!important;
+
+      border: 1px solid $red!important;
+
+      transition: $btn-transition;
+
+      &:hover {
+        color: $white!important;
+        box-shadow: 0 10px 40px 0 rgba(234, 12, 12, 0.4)!important;
+      }
+    }
+
+.btn-cta {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  border-radius: $border-radius;
+
+  padding: 1.25rem 2rem;
+
+  font-size: $font-size-base;
+  font-weight: $font-weight-sm-bold;
+  line-height: 180%;
+
+  transition: $general-transition;
+
+  box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    box-shadow: 0 6px 28px 0 rgba(0, 0, 0, 0.8);
+  }
+
+}
+
+  .btn-cta--primary {
+    background-color: $blue-3;
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .btn-cta--secondary {
+    background-color: $white;
+    color: $gray-800;
+
+    &:hover {
+      color: $gray-800;
+    }
+  }
+
+.btn-secondary,
+.btn-default,
+.fdescription a,
+.form-control-static a,
+.modal-dialog .modal-footer a,
+.backlink a,
+.tool_dataprivacy-expand-all,
+#prev-activity-link,
+#next-activity-link,
+.section-handle.moodle-core-dragdrop-draghandle,
+.filepicker-filename a,
+.forumpost .footer a,
+#page-admin-roles-permissions .preventlink,
+#page-admin-roles-permissions .preventlink .forbidden,
+#page-admin-roles-permissions .allowlink,
+#page-admin-roles-permissions .prohibitlink,
+.generaltable a.action-icon,
+table.form-autocomplete-suggestions,
+.form-autocomplete-suggestions a,
+fieldset .form-autocomplete-suggestions a,
+[data-action="addstandardtag"],
+#page-admin-roles-permissions .role_buttons input[type="button"],
+#page-grade-edit-letter-index #region-main .mdl-align a,
+.path-admin-tool-assignmentupgrade #region-main div:last-child.mdl-align a,
+.course-footer-nav .btn,
+#page-admin-user-profile-index a[title="Edit"],
+#page-admin-user-profile-index a[title="Delete"],
+#page-admin-tool-httpsreplace-index [role="main"] p a,
+[data-fieldtype="tags"] a,
+#adminsettings fieldset h3 a:not([class=btn-icon]),
+.collapsibleregioncaption a:not(.btn-icon),
+.header-button-group .btn,
+td .commands a,
+.backlink a,
+.action-menu .dropdown-toggle,
+.feedback_mapped_courses .mdl-align a,
+.typesummary .helplinkpopup,
+#page-mod-quiz-edit .editing_section,
+#page-mod-glossary-view .commands a.icon,
+#page-mod-glossary-showentry .commands a.icon,
+.comment-area .fd a,
+.subscribelink a,
+.forumpost .link a,
+.reportlink a,
+#showall a,
+.printicon,
+.comment-link,
+.recipelink a,
+.midpad a,
+.addtomyinterests,
+.flagasinappropriate,
+.removefrommyinterests,
+.edittag,
+#participants td a[role=button],
+.bookprev,
+.booknext,
+.submitbtns .arrow_link,
+.edit_pages_box .addlinks a,
+.book_toc_numbered .action-list a,
+.activity .action-menu-item a,
+#page-mod-quiz-report .toggleincludeauto a,
+.paging-morelink,
+.userpicture a:not(:first-child),
+table .btn,
+#page-user-profile .node_category .viewmore a,
+.path-user .node_category .viewmore a,
+.itemnav a,
+.section-navigation a
+.availability-delete,
+.section-navigation a,
+.usp-search-btn,
+.notesgroup p a,
+.tag-backtoallitems a,
+.tool_dataprivacy a,
+.path-mod-forum .discussion-nav .next-discussion,
+.path-mod-forum .discussion-nav .prev-discussion,
+.c-lang-menu .dropdown-toggle,
+.yui3-widget-buttons .yui3-button:not(.closebutton),
+.editquestion a,
+.qtype_multichoice_clearchoice a,
+#theme_switch_link a,
+#page-mod-quiz-attempt .questionflag
+{
+  background: $white;
+  border: 1px solid #E4E8F0;
+  box-shadow: $btn-box-shadow;
+
+  transition: $general-transition;
+
+  a {
+    color: $gray-900;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  &:focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+}
+
+    .notesgroup p a {
+      &:before {
+        display: none;
+      }
+    }
+
+    .usertour a,
+    .tool_dataprivacy a,
+    #theme_switch_link a {
+      margin-bottom: 10px;
+
+      @include media-breakpoint-only(sm) {
+        width: 100%;
+      }
+    }
+
+    .purgecaches a,
+    .s-footer .helplink a {
+      @include media-breakpoint-only(sm) {
+        width: 100%;
+      }
+    }
+
+    .editquestion {
+      a {
+        .icon {
+          margin-right: 0.5rem;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .availability-delete {
+      img {
+        width: 18px;
+        height: auto;
+      }
+    }
+
+    .bookprev {
+        float: left;
+
+        @include media-breakpoint-down(md) {
+        float: none;
+        }
+    }
+
+    #page-site-index .page-header-headings {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+
+    .page-header-headings + .header-button-group {
+      margin-left: 1rem;
+    }
+
+    .quickeditlink {
+      align-items: center;
+      line-height: 1;
+    }
+
+    .printicon {
+      padding-left: 3rem!important;
+      background-position: 20px!important;
+
+      @include media-breakpoint-between(sm,md) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+    }
+
+
+            @include media-breakpoint-between(sm,md) {
+              .glossarycontrol {
+                width: 100%;
+              }
+
+              #newentryform {
+                div {
+                  width: 100%;
+                }
+              }
+            }
+
+            .btn a {
+              &:hover {
+                text-decoration: none;
+              }
+            }
+
+
+    #showall a {
+      margin-top: 1rem;
+    }
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link,
+.cancel a {
+  font-weight: $font-weight-sm-bold;
+  text-decoration: none;
+  color: $link-color;
+  background-color: transparent;
+  box-shadow: none;
+  border-color: transparent;
+
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: none;
+    box-shadow: none!important;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    cursor: not-allowed;
+  }
+
+  // No need for an active state here
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg,
+#page-grade-grading-manage .actions .action {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm,
+.notesgroup p a,
+table .comment-link,
+.generaltable td .btn,
+.tool_dataprivacy-expand-all,
+#page-admin-roles-permissions .preventlink,
+#page-admin-roles-permissions .preventlink .forbidden,
+#page-admin-roles-permissions .allowlink,
+#page-admin-roles-permissions .prohibitlink,
+.generaltable a.action-icon,
+#page-admin-roles-permissions .role_buttons input[type="button"],
+#page-admin-user-profile-index a[title="Edit"],
+#page-admin-user-profile-index a[title="Delete"],
+.card-text .footer a,
+#page-admin-roles-permissions .confirmation-buttons .btn,
+table a.btn-primary,
+.typesummary .helplinkpopup,
+#page-mod-quiz-edit .editing_section,
+.recipelink a,
+.addtomyinterests,
+.flagasinappropriate,
+.removefrommyinterests,
+.edittag,
+[data-action="delete-competency-link"],
+.edit_pages_box .addlinks a,
+.newlink a,
+.book_toc_numbered .action-list a,
+.activity .action-menu-item a,
+.forumpost .link a,
+.itemnav a,
+.table td .btn-link,
+.discussionsubscription a,
+[data-type="subscription-toggle"],
+.path-mod-forum .discussion-nav .next-discussion,
+.path-mod-forum .discussion-nav .prev-discussion,
+.c-lang-menu .dropdown-toggle,
+.editquestion a,
+#page-mod-quiz-attempt .questionflag
+{
+  @include button-size($btn-padding-y-sm, 1rem, $font-size-xs, $btn-line-height-sm, $border-radius);
+
+  .icon {
+    font-size: $font-size-xs;
+  }
+}
+
+.btn-xs,
+a.action-icon,
+.grading-report .btn,
+td .commands a,
+.gradereport-grader-table td .btn,
+.gradereport-grader-table th .btn,
+.floater.heading.floating .btn,
+#participants td a[role=button]
+{
+  @include button-size(.25rem, .35rem, 0.75rem, $btn-line-height-sm, $border-radius);
+
+  .icon {
+    font-size: $font-size-xs;
+  }
+}
+
+
+    .activity .action-menu-item a {
+        margin-left: 0.25rem;
+        i {
+          font-size: 1rem;
+          line-height: 1.2;
+        }
+    }
+
+    .gradereport-grader-table {
+      td, th {
+          a {
+          margin: 0 0.5rem;
+
+          i {
+           margin: 0!important;
+           line-height: 1.2;
+          }
+        }
+      }
+    }
+
+    .editquestion {
+      i {
+        margin-right: 0.25rem;
+      }
+    }
+
+    .section-navigation {
+      .sectionname {
+        margin: 1rem;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .rarrow {
+        margin-left: 0.5rem!important;
+      }
+
+      .larrow {
+        margin-right: 0.5rem!important;
+      }
+    }
+
+
+//
+// Block button
+//
+
+.btn-block,
+p.arrow_button input,
+#addcontrols input,
+#removecontrols input {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type=reset],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.discussion-nav {
+  .next-discussion a,
+  .prev-discussion a {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.discussion-nav .prev-discussion,
+.path-mod-forum .discussion-nav .next-discussion
+{
+  margin-right: 0.25rem;
+}
+
+input.form-submit, #id_addidnumbers {
+  float: left;
+}
+
+/* mod/forum/discuss.php */
+#page-mod-forum-discuss {
+  .singlebutton,
+  div.singleselect {
+    margin: 0!important;
+  }
+
+  .urlselect {
+    margin-right: 1rem;
+
+    @include media-breakpoint-between(sm,md) {
+      margin-right: 0!important;
+    }
+  }
+}
+
+//mods for links inside tables
+table {
+  a.btn-primary {
+    margin: 1.5px 0;
+    color: $white!important;
+  }
+}
+
+.section-modchooser-link {
+
+  .icon {
+    font-size: 15px;
+  }
+
+  a {
+    width: 100%;
+
+    margin-top: $spacer;
+    margin-bottom: 2 * $spacer;
+
+      &:before {
+        display: none;
+      }
+    }
+}
+
+.btn-icon {
+  .icon.fa-question-circle {
+    color: $gray-700;
+  }
+}
+
+#userselector_options {
+  display: block;
+  margin: 2rem 0 0 0!important;
+  width: 100%;
+}
+
+.typesummary .helplinkpopup {
+  width: 100%;
+  text-align: left;
+}
+
+#page-mod-wiki-view {
+  .settings-menu {
+    form {
+      margin-right: 100px;
+
+      @include media-breakpoint-only(sm) {
+          margin-right: 0;
+      }
+
+      input {
+        display: inline-flex;
+        width: auto;
+      }
+    }
+  }
+
+
+      @include media-breakpoint-only(sm) {
+        .wikisearch {
+          text-align: center;
+          input {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+
+}
+
+.course-footer-nav {
+  .hr {
+    margin-bottom: 2.5rem;
+  }
+
+  .pull-right {
+    .btn {
+      text-align: right!important;
+    }
+  }
+
+  .pull-left {
+    .btn {
+      text-align: left!important;
+    }
+  }
+
+  form {
+    margin: 0!important;
+  }
+
+  div {
+    @include media-breakpoint-only(sm) {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+}
+
+  h3 {
+    a.btn-icon {
+      margin: 0.5rem;
+    }
+  }
+
+  .discussionsubscription {
+    a {
+      i {
+        margin-right: 0.5rem;
+        font-size: $font-size-sm;
+
+        height: auto;
+      }
+    }
+  }
+
+  .forumpost .options .link {
+    margin-top: 15px;
+    font-size: 12px;
+
+    text-align: left;
+
+    a {
+      margin: 0 10px 0 30px;
+
+      @include media-breakpoint-only(sm) {
+        margin: 0 10px 0 15px;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  /* two buttons next to each other. eg: admin/roles/override.php */
+  .submit_buttons {
+    [type="submit"] {
+      margin-right: 0.25rem;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .add-sections,
+  .section-modchooser-link
+  {
+    .icon {
+      margin-right: 0.5rem;
+    }
+  }
+
+
+  .c-custom-nav-btn {
+    padding: 12px 20px;
+
+    display: inline-flex;
+    align-items: center;
+
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    font-size: $font-size-sm;
+    font-weight: $font-weight-sm-bold;
+    color: $gray-800;
+    line-height: 1.2;
+
+    span,
+    .c-custom-nav-btn--text {
+      margin-left: 10px;
+      font-size: $font-size-xs;
+      line-height: 1.4;
+    }
+
+    @include media-breakpoint-only(sm) {
+      margin: 0;
+    }
+
+    #topBar5 & {
+      margin-right: 1rem;
+      @include media-breakpoint-only(sm) {
+        margin: 0;
+      }
+    }
+
+  }
+
+  .activity .action-menu-item a {
+      &.cm-edit-action {
+        line-height: 1.6;
+      }
+  }
+
+  @include media-breakpoint-only(sm) {
+    .c-lang-menu .dropdown-toggle {
+      display: block;
+      margin: 10px 0;
+    }
+  }
